@@ -5,7 +5,9 @@ package com.xx.bootdemo.exception;
  */
 public class MyException extends Exception {
 
-    public MyException(String message) {
-        super(message);
-    }
+  private static final long serialVersionUID = 1L;
+
+  public MyException(String message) {
+    super(message);
+  }
 }

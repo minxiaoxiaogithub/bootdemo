@@ -9,36 +9,36 @@ import org.springframework.stereotype.Component;
 @Component
 public class TestProperties {
 
-    @Value("${com.test.number}")
-    private String number;
+  @Value("${com.test.number}")
+  private String number;
 
-    @Value("${com.test.name}")
-    private String name;
+  @Value("${com.test.name}")
+  private String name;
 
-    @Value("${com.test.str}")
-    private String str;
+  @Value("${com.test.str}")
+  private String str;
 
-    public String getNumber() {
-        return number;
-    }
+  public String getNumber() {
+    return number;
+  }
 
-    public void setNumber(String number) {
-        this.number = number;
-    }
+  public void setNumber(String number) {
+    this.number = number;
+  }
 
-    public String getName() {
-        return name;
-    }
+  public String getName() {
+    return name;
+  }
 
-    public void setName(String name) {
-        this.name = name;
-    }
+  public void setName(String name) {
+    this.name = name;
+  }
 
-    public String getStr() {
-        return str;
-    }
+  public String getStr() {
+    return str;
+  }
 
-    public void setStr(String str) {
-        this.str = str;
-    }
+  public void setStr(String str) {
+    this.str = str;
+  }
 }
