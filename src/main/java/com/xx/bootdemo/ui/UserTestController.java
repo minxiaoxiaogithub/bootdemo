@@ -18,7 +18,6 @@ import com.xx.bootdemo.services.UserServices;
 @RequestMapping("/testuser")
 public class UserTestController {
 
-
   @Autowired
   private UserServices userServices;
 

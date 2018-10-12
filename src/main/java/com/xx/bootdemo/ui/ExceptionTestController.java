@@ -3,7 +3,7 @@ package com.xx.bootdemo.ui;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.xx.bootdemo.exception.MyException;
+import com.xx.bootdemo.exception.BusinessException;
 
 /**
  * 全局异常测试UI
@@ -13,8 +13,8 @@ import com.xx.bootdemo.exception.MyException;
 public class ExceptionTestController {
 
   @RequestMapping("/json")
-  public String json() throws MyException {
-    throw new MyException("测试抛出自定义异常！");
+  public String json() throws BusinessException {
+    throw new BusinessException("测试抛出自定义异常！");
   }
 
   @RequestMapping("/testnull")
