@@ -12,37 +12,37 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.xx.bootdemo.entity.User;
-import com.xx.bootdemo.services.UserServices;
+import com.xx.bootdemo.services.UserService;
 
 @RestController
 @RequestMapping("/testuser")
 public class UserTestController {
 
   @Autowired
-  private UserServices userServices;
+  private UserService userService;
 
   @PostMapping("/add")
   public void add(User user) {
-    this.userServices.add(user);
+    this.userService.add(user);
   }
 
   @DeleteMapping("/delete/{id}")
-  public void delete(@PathVariable Integer id) {
-    this.userServices.delete(id);
+  public void delete(@PathVariable("id") Integer id) {
+    this.userService.delete(id);
   }
 
   @PutMapping("/update")
   public void update(User user) {
-    this.userServices.update(user);
+    this.userService.update(user);
   }
 
   @GetMapping("/list")
   public List<User> list() {
-    return this.userServices.list();
+    return this.userService.list();
   }
 
   @GetMapping("/getById/{id}")
-  public User getById(Integer id) {
-    return this.userServices.getById(id);
+  public User getById(@PathVariable("id") Integer id) {
+    return this.userService.getById(id);
   }
 }
