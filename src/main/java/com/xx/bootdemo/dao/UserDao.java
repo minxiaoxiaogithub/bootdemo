@@ -3,6 +3,7 @@ package com.xx.bootdemo.dao;
 import java.util.List;
 
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
 
 import com.xx.bootdemo.entity.User;
 
@@ -17,5 +18,5 @@ public interface UserDao {
 
   public List<User> list();
 
-  public User getById(Integer id);
+  public User getById(@Param("id") Integer id);
 }

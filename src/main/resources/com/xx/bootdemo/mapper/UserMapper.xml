@@ -28,8 +28,8 @@
         SELECT * FROM XX_USER
     </select>
 
-    <select id="getById" resultType="com.xx.bootdemo.entity.User">
-        SELECT * FROM XX_USER WHERE id = #{id}
+    <select id="getById" parameterType="int" resultType="com.xx.bootdemo.entity.User">
+        SELECT * FROM XX_USER WHERE id = #{id,jdbcType=NUMERIC}
     </select>
 
 </mapper>
