@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.xx.bootdemo.entity.TestProperties;
 
 /**
- * 获取配置文件的值
+ * 获取配置文件的值（推荐environment）
  */
 @RestController
 public class FirstController {
