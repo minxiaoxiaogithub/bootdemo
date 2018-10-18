@@ -47,8 +47,8 @@ public class BootdemoApplicationTests {
 
   @Test
   public void list() {
-    System.out.println(userTestController.list().size());
-    Assert.assertEquals(0, userTestController.list().size());
+    System.out.println(userTestController.list().getData().size());
+    Assert.assertEquals(0, userTestController.list().getData().size());
   }
 
 }

@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -23,27 +24,27 @@ public class UserController {
   private UserService userService;
 
   @PostMapping("/add")
-  public void add(User user) {
-    this.userService.add(user);
+  public ResultBean<Integer> add(@RequestBody User user) {
+    return new ResultBean<Integer>(this.userService.add(user));
   }
 
   @DeleteMapping("/delete/{id}")
-  public void delete(@PathVariable("id") Integer id) {
-    this.userService.delete(id);
+  public ResultBean<Integer> delete(@PathVariable("id") Integer id) {
+    return new ResultBean<Integer>(this.userService.delete(id));
   }
 
   @PutMapping("/update")
-  public void update(User user) {
-    this.userService.update(user);
-  }
-
-  @GetMapping("/list")
-  public List<User> list() {
-    return this.userService.list();
+  public ResultBean<Integer> update(@RequestBody User user) {
+    return new ResultBean<Integer>(this.userService.update(user));
   }
 
   @GetMapping("/getById/{id}")
   public ResultBean<User> getById(@PathVariable("id") Integer id) {
     return new ResultBean<User>(this.userService.getById(id));
+  }
+
+  @GetMapping("/list")
+  public ResultBean<List<User>> list() {
+    return new ResultBean<List<User>>(this.userService.list());
   }
 }

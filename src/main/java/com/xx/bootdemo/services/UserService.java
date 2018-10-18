@@ -16,16 +16,19 @@ public class UserService {
   @Autowired
   UserDao userDao;
 
-  public void add(User user) {
+  public Integer add(User user) {
     this.userDao.add(user);
+    return user.getId();
   }
 
-  public void delete(Integer id) {
+  public Integer delete(Integer id) {
     this.userDao.delete(id);
+    return id;
   }
 
-  public void update(User user) {
+  public Integer update(User user) {
     this.userDao.update(user);
+    return user.getId();
   }
 
   public List<User> list() {

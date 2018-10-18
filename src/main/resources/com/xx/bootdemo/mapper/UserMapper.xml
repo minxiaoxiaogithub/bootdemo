@@ -5,23 +5,27 @@
 <mapper namespace="com.xx.bootdemo.dao.UserDao">
 
     <insert id="add" parameterType="com.xx.bootdemo.entity.User">
+	    <selectKey keyProperty="id" resultType="java.lang.Integer" order="BEFORE">  
+	            select XX_USER_S.nextval from dual  
+	    </selectKey>
         INSERT INTO XX_USER VALUES (#{id},#{name},#{age})
     </insert>
 
-    <delete id="delete">
-        DELETE FROM XX_USER WHERE id = #{id}
+    <delete id="delete" parameterType="int">
+        DELETE FROM XX_USER WHERE id = #{id,jdbcType=NUMERIC}
     </delete>
 
-    <update id="update">
+    <update id="update" parameterType="com.xx.bootdemo.entity.User">
         UPDATE XX_USER
-        <set>
+        <trim prefix="set" suffixOverrides=",">
         <if test="age != null" >
             age = #{age,jdbcType=DECIMAL},
         </if>
         <if test="name != null" >
             name = #{name,jdbcType=VARCHAR},
         </if>
-        </set>
+        </trim>
+        WHERE id = #{id,jdbcType=NUMERIC} 
     </update>
 
     <select id="list" resultType="com.xx.bootdemo.entity.User">

@@ -10,9 +10,9 @@ import com.xx.bootdemo.entity.User;
 @Mapper
 public interface UserDao {
 
-  public void add(User user);
+  public Integer add(User user);
 
-  public void delete(Integer id);
+  public void delete(@Param("id") Integer id);
 
   public void update(User user);
 
