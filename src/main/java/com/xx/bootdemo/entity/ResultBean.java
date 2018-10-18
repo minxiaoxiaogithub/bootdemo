@@ -9,9 +9,13 @@ public class ResultBean<T> {
 
   public static final int FAIL = 1;
 
-  private int code;
+  public static final int NO_LOGIN = -1;// 未登录
 
-  private String message;
+  public static final int NO_PERMISSION = -2;// 无权限
+
+  private int code = SUCCESS;
+
+  private String message = "success";
 
   private String url;
 
@@ -46,6 +50,15 @@ public class ResultBean<T> {
   }
 
   public void setData(T data) {
+    this.data = data;
+  }
+
+  public ResultBean() {
+    super();
+  }
+
+  public ResultBean(T data) {
+    super();
     this.data = data;
   }
 }

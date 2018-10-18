@@ -2,6 +2,8 @@ package com.xx.bootdemo.exception;
 
 import javax.servlet.http.HttpServletRequest;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -13,6 +15,8 @@ import com.xx.bootdemo.entity.ResultBean;
  */
 @ControllerAdvice
 public class GlobalExceptionHandler {
+
+  private static final Logger logger = LoggerFactory.getLogger(GlobalExceptionHandler.class);
 
   /**
    * BusinessException处理方法
@@ -51,6 +55,7 @@ public class GlobalExceptionHandler {
     resultBean.setUrl(request.getRequestURI().toString());
     // 根据实际情况判断是否需要返回data
     resultBean.setData("Some Data");
+    logger.error("error", e);
     return resultBean;
   }
 }
