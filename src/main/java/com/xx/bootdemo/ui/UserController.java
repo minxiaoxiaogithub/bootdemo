@@ -23,26 +23,55 @@ public class UserController {
   @Autowired
   private UserService userService;
 
+  /**
+   * 新增
+   * 
+   * @param user
+   * @return
+   */
   @PostMapping("/add")
   public ResultBean<Integer> add(@RequestBody User user) {
     return new ResultBean<Integer>(this.userService.add(user));
   }
 
+  /**
+   * 删除
+   * 
+   * @param id
+   * @return
+   */
   @DeleteMapping("/delete/{id}")
   public ResultBean<Integer> delete(@PathVariable("id") Integer id) {
     return new ResultBean<Integer>(this.userService.delete(id));
   }
 
+  /**
+   * 修改
+   * 
+   * @param user
+   * @return
+   */
   @PutMapping("/update")
   public ResultBean<Integer> update(@RequestBody User user) {
     return new ResultBean<Integer>(this.userService.update(user));
   }
 
+  /**
+   * 查询
+   * 
+   * @param id
+   * @return
+   */
   @GetMapping("/getById/{id}")
   public ResultBean<User> getById(@PathVariable("id") Integer id) {
     return new ResultBean<User>(this.userService.getById(id));
   }
 
+  /**
+   * 批量查询
+   * 
+   * @return
+   */
   @GetMapping("/list")
   public ResultBean<List<User>> list() {
     return new ResultBean<List<User>>(this.userService.list());
