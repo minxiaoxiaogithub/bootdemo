@@ -31,7 +31,7 @@ public class GlobalExceptionHandler {
     ResultBean<Object> resultBean = new ResultBean<Object>();
     resultBean.setCode(ResultBean.FAIL);
     resultBean.setMessage(e.getMessage());
-    resultBean.setUrl(request.getRequestURI().toString());
+    // resultBean.setUrl(request.getRequestURI().toString());
     // 根据实际情况判断是否需要返回data
     resultBean.setData("Some Data");
     return resultBean;
@@ -52,7 +52,7 @@ public class GlobalExceptionHandler {
     ResultBean<Object> resultBean = new ResultBean<Object>();
     resultBean.setCode(ResultBean.FAIL);
     resultBean.setMessage(e.getMessage());
-    resultBean.setUrl(request.getRequestURI().toString());
+    // resultBean.setUrl(request.getRequestURI().toString());
     // 根据实际情况判断是否需要返回data
     resultBean.setData("Some Data");
     logger.error("error", e);

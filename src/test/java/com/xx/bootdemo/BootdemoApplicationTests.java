@@ -10,7 +10,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import com.xx.bootdemo.entity.TestProperties;
-import com.xx.bootdemo.ui.UserTestController;
+import com.xx.bootdemo.ui.UserController;
 
 /**
  * 单元测试
@@ -26,7 +26,7 @@ public class BootdemoApplicationTests {
   TestProperties testProperties;
 
   @Autowired
-  UserTestController userTestController;
+  UserController userTestController;
 
   @Before
   public void before() {
