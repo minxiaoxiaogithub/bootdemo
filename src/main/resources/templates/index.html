@@ -8,5 +8,21 @@
 	<p>
 		<label th:text="#{welcome}"></label>
 	</p>
+	<script type="text/javascript">
+         function check1(form) {
+             document.form1.submit();
+            }
+         function check2(form) {
+             document.form2.submit();
+       		}
+    </script>
+	<form action="/changeSessionLanauage" name="form1" method="post">
+		<input name="lang" style="display:none" value="zh" />        
+		<input type="button" name="submit1" value="切换为中文" onclick="check1(this.form)"/>
+	</form>
+	<form action="/changeSessionLanauage" name="form2" method="post" >
+		<input name="lang" style="display:none" value="en" />        
+		<input type="button" name="submit2" value="切换为英文" onclick="check2(this.form)"/>
+	</form>
 </body>
 </html>
