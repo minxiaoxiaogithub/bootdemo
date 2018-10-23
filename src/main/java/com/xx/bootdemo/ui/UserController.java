@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.xx.bootdemo.entity.PageVo;
 import com.xx.bootdemo.entity.ResultBean;
 import com.xx.bootdemo.entity.User;
 import com.xx.bootdemo.services.UserService;
@@ -75,5 +76,18 @@ public class UserController {
   @GetMapping("/list")
   public ResultBean<List<User>> list() {
     return new ResultBean<List<User>>(this.userService.list());
+  }
+
+  /**
+   * 分页查询
+   * 
+   * @param page
+   * @param pageSize
+   * @return
+   */
+  @GetMapping("/pageList/{page}/{pageSize}")
+  public PageVo<User> pageList(@PathVariable("page") Integer page,
+      @PathVariable("pageSize") Integer pageSize) {
+    return this.userService.pageList(page, pageSize);
   }
 }

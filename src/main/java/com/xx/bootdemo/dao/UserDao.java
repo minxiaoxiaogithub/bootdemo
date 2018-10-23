@@ -19,4 +19,8 @@ public interface UserDao {
   public List<User> list();
 
   public User getById(@Param("id") Integer id);
+
+//  public List<User> pageList();
+//
+//  public Integer getCount();
 }

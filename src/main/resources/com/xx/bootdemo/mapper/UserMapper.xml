@@ -36,5 +36,12 @@
         SELECT * FROM XX_USER WHERE id = #{id,jdbcType=NUMERIC}
     </select>
 
+<!-- 	<select id="pageList" resultType="com.xx.bootdemo.entity.User"> -->
+<!-- 		select * from XX_USER -->
+<!-- 	</select> -->
+	
+<!-- 	<select id="getCount" resultType="int"> -->
+<!-- 		select count(1) from XX_USER -->
+<!-- 	</select> -->
 </mapper>
 
